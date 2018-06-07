@@ -1,0 +1,16 @@
+server:
+  port: 8091
+
+spring:
+  application:
+    name: learn_config
+  profiles:
+    active: native
+  cloud:
+    config:
+      name: cloud-config
+      server:
+        native:
+          searchLocations: E:/config_repo
+        git:
+          uri: https://github.com/spring-cloud-samples/config-repo

@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: learn-eureka
+  cloud:
+    config:
+      uri: http://localhost:8091
+      name: learn-eureka
+      profile: local
