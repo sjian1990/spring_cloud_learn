@@ -10,16 +10,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sun.learn.service.FeignService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 @RestController
+@Api(value = "fegin测试")
 public class FeignController {
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(FeignController.class);
-	
+
 	@Autowired
 	private FeignService feignService;
-	
-	@GetMapping(value="getFeign")
-	public Object getFeign(HttpServletRequest request){
+
+	@ApiOperation(value = "feigin测试接口信息", notes = "feigin测试接口信息Notes")
+	@GetMapping(value = "getFeign")
+	public Object getFeign(HttpServletRequest request) {
 		logger.info("accept-encoding={}", request.getHeader("accept-encoding"));
 		logger.info("accept-language={}", request.getHeader("accept-language"));
 		logger.info("getFeign Success!");

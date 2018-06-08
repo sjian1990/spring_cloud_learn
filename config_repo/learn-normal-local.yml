@@ -5,3 +5,7 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8092/eureka/
+      
+keys: 
+ values: this is a config key value. 
+      

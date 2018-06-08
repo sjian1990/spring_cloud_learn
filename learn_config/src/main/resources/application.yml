@@ -11,6 +11,8 @@ spring:
       name: cloud-config
       server:
         native:
-          searchLocations: E:/config_repo
+          searchLocations: E:/githubCode/spring_cloud_learn/config_repo
         git:
-          uri: https://github.com/spring-cloud-samples/config-repo
+          uri: https://github.com/sjian1990/spring_cloud_learn/tree/master/config_repo
+          username: sjian1990
+          password: Jian1990@sun

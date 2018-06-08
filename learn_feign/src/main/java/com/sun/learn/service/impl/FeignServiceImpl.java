@@ -10,7 +10,7 @@ import com.sun.learn.service.FeignService;
 
 @Service
 public class FeignServiceImpl implements FeignService {
-
+	
 	private static final Logger logger = LoggerFactory.getLogger(FeignServiceImpl.class);
 	
 	@Autowired
@@ -19,11 +19,11 @@ public class FeignServiceImpl implements FeignService {
 	@Override
 	public Object getFeignInfo() {
 		
-		String ooo = feignRemot.getNormal();
+		String result = feignRemot.getNormal();
 		logger.info("getNormal Success!");
 		
-		logger.info(ooo.toString());
-		return feignRemot.getNormal();
+		logger.info(result.toString());
+		return result;
 	}
 
 }
