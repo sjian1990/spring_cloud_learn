@@ -5,7 +5,7 @@ spring:
   application:
     name: learn_config
   profiles:
-    active: git
+    active: native
   cloud:
     config:
       name: cloud-config
@@ -15,3 +15,8 @@ spring:
         git:
           uri: https://github.com/sjian1990/spring_cloud_learn.git
           searchPaths: config_repo
+        github:
+          uri: https://github.com/sjian1990/spring_cloud_learn/
+          searchPaths: config_repo
+          username: sjian1990@sina.cn
+          password: Jian1990@sun

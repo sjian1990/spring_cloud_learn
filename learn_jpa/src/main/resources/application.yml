@@ -1,0 +1,19 @@
+server:
+  port: 8095
+  
+spring:  
+  datasource:  
+    url: jdbc:mysql://192.168.1.68:3306/financeAsset?characterEncoding=utf8  
+    username: root  
+    password: sjian1990
+  jpa:  
+    database: MYSQL  
+    show-sql: true  
+    #hibernate ddl auto(validate,create,update,create-drop)  
+    hibernate:  
+      ddl-auto: update  
+      naming:  
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy  
+    properties:  
+      hibernate:  
+        dialect: org.hibernate.dialect.MySQL5Dialect  

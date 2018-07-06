@@ -13,3 +13,4 @@ eureka:
       defaultZone: http://localhost:8092/eureka/
   server:
     enableSelfPreservation: false
+    

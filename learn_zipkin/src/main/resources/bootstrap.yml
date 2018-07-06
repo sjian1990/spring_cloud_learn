@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: learn-zipkin
+  cloud:
+    config:
+      uri: http://localhost:8091
+      name: learn-zipkin
+      profile: local

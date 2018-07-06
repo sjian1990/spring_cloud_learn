@@ -2,6 +2,7 @@ package com.sun.learn.hystrixback;
 
 import org.springframework.stereotype.Component;
 
+import com.sun.learn.entity.User;
 import com.sun.learn.remote.FeignRemot;
 
 import feign.hystrix.FallbackFactory;
@@ -14,6 +15,11 @@ public class MyHystrixClientFallbackFactory implements FallbackFactory<FeignRemo
 		return new FeignRemot() {
 			@Override
 			public String getNormal() {
+				return "request level down";
+			}
+
+			@Override
+			public String objectParamTest(User user) {
 				return "request level down";
 			}
 		};
