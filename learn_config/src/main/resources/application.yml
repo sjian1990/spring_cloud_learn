@@ -5,13 +5,15 @@ spring:
   application:
     name: learn_config
   profiles:
-    active: native
+    active: prod
   cloud:
     config:
       name: cloud-config
       server:
         native:
           searchLocations: E:/githubCode/spring_cloud_learn/config_repo
+        prod:
+          searchLocations: /var/local/app/apps/conf_repo
         git:
           uri: https://github.com/sjian1990/spring_cloud_learn.git
           searchPaths: config_repo

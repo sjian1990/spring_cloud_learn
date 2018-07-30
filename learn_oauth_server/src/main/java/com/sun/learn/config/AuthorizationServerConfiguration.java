@@ -41,8 +41,10 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 
 	@Override // 配置框架应用上述实现
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+
 		endpoints.authenticationManager(authenticationManager);
 		endpoints.tokenStore(tokenStore());
+		endpoints.setClientDetailsService(clientDetails());
 
 		// 配置TokenServices参数
 		DefaultTokenServices tokenServices = new DefaultTokenServices();
@@ -56,15 +58,12 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 
 	@Override
 	public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+		security.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()");
 	}
 
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-		clients.inMemory() // 使用in-memory存储
-				.withClient("client") // client_id
-				.secret("secret") // client_secret
-				.authorizedGrantTypes("authorization_code") // 该client允许的授权类型
-				.scopes("app"); // 允许的授权范围
+		clients.withClientDetails(clientDetails());
 	}
 
 }

@@ -6,6 +6,16 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8092/eureka/
 
-keys: 
-  values: this is a config key value. 
+spring:
+  zipkin:
+    enabled: true
+    # zipkkin dashboard的地址：通过真实IP地址访问
+    baseUrl: http://localhost:8096/
+    # 通过cloud-dashboard-zipkin注册到注册中心的服务名称访问，本版本(spring-cloud-sleuth-core-1.2.5.RELEASE)不支持，需要从spring-cloud-sleuth-core-1.3.0.RELEASE开始支持这个功能
+    # 配置如下：
+    # baseUrl: http://learn-zipkin/
+  sleuth:
+    sampler:
+       #  采样率
+      percentage: 1
       
